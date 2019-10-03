@@ -10,30 +10,24 @@ using WpfApp8.ViewModel;
 
 namespace WpfApp8.ViewModel
 {
-     public class ViewModelDepartment :  INotifyPropertyChanged
+     public class DepartmentViewModel :  INotifyPropertyChanged
     {
         private ObservableCollection<Department> _department;
 
         private int _deptid;
         private string _deptname;
         private int _salary;
-        public ViewModelDepartment()
+        public DepartmentViewModel()
         {
             _department = new ObservableCollection<Department>();
         }
 
-        public int add1()
-        {
-            var d = new Department();
-            d.DeptID = _deptid;
-            d.Deptname = _deptname;
-            d.Salary = _salary;
-            _department.Add(d);
-            
-            
-            return _department.Count;
+        //public void  add1(Deaprtment1  Department )
+        //{
+        //    _department.Add(Department);
 
-        }
+
+        //}
         public ObservableCollection<Department> Department
         {
             get { return _department; }

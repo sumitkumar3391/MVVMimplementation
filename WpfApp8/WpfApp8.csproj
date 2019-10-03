@@ -57,10 +57,12 @@
     </ApplicationDefinition>
     <Compile Include="Model\Department1.cs" />
     <Compile Include="Model\Person1.cs" />
+    <Compile Include="Model\PersonDetail.cs" />
+    <Compile Include="ViewModel\DepartmentViewModel1.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel1.cs" />
     <Compile Include="ViewModel\PersonViewModel.cs" />
-    <Compile Include="ViewModel\ViewModelDepartment.cs" />
+    <Compile Include="ViewModel\DepartmentViewModel.cs" />
     <Compile Include="ViewModel\ViewModelPerson.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

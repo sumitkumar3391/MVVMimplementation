@@ -48,6 +48,7 @@ namespace WpfApp8.Model
         private void OnProprertyChanged(string parameter)
         {
             var eventHandler = PropertyChanged;
+            if(eventHandler!= null)
             eventHandler(this, new PropertyChangedEventArgs(parameter));
         }
     }

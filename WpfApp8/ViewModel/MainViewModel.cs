@@ -12,7 +12,7 @@ namespace WpfApp8.ViewModel
     public class MainViewModel : INotifyPropertyChanged
     {
         private ViewModelPerson _vmPerson;
-        private ViewModelDepartment _vmDepartment;
+        private DepartmentViewModel _vmDepartment;
 
         private ObservableCollection<Person> _persons;
         private ObservableCollection<Department> _departments;
@@ -39,7 +39,7 @@ namespace WpfApp8.ViewModel
         public MainViewModel()
         {
             _vmPerson = new ViewModelPerson();
-            _vmDepartment = new ViewModelDepartment();
+            _vmDepartment = new DepartmentViewModel();
 
             _persons = _vmPerson.Person;
             _departments = _vmDepartment.Department;
