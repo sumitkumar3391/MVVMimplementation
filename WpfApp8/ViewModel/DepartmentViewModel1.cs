@@ -30,6 +30,7 @@ namespace WpfApp8.ViewModel
         public void add1( Deaprtment1 deaprtment)
         {
             _departments.Add(deaprtment);
+            
 
         }
         private void ONPropertChanged(string parameter)

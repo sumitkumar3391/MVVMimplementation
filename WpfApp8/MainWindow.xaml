@@ -34,7 +34,7 @@
         <TextBlock Grid.Row="0" Grid.Column="0" Text="First Name"  HorizontalAlignment="Left" Margin="0,10,0,74" Width="63" Grid.ColumnSpan="1"/>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Last Name" HorizontalAlignment="Left" Margin="0,40,0,41"  Width="63"/>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="  Salary" HorizontalAlignment="Left" Margin="0,70,0,10" Width="54"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="20,6,-191,75" RenderTransformOrigin="0.496,0.785" Text="{Binding ElementName=Listview , Path=SelectedItem.FirstName, Mode=TwoWay}" >
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="20,6,-191,75" RenderTransformOrigin="0.496,0.785" Text="{Binding FirstName, Mode=TwoWay ,UpdateSourceTrigger=PropertyChanged}" >
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -44,8 +44,8 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="0,40,-191,41" HorizontalAlignment="Right" Width="172" Text="{Binding ElementName=Listview , Path=SelectedItem.LastName, Mode=TwoWay}" />
-        <TextBox Grid.Row="0" Margin="-23,70,-84,10" RenderTransformOrigin="0.132,0.139"  Grid.ColumnSpan="2"  Text="{Binding ElementName=Listview , Path=SelectedItem.LastName, Mode=TwoWay}" >
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="0,40,-191,41" HorizontalAlignment="Right" Width="172" Text="{Binding LastName, Mode=TwoWay ,UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Row="0" Margin="-23,70,-84,10" RenderTransformOrigin="0.132,0.139"  Grid.ColumnSpan="2"  Text="{Binding Salary, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -58,17 +58,17 @@
         <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Text="Dept ID" RenderTransformOrigin="1.485,0.506" Margin="0,10,-316,74" Width="83"/>
         <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Text="Dept Name" Margin="0,40,-316,41" Width="83"/>
         <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Text="Description" Margin="0,70,-316,10" Width="83"/>
-        <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Margin="0,6,-521,75" Width="205"  Text="{Binding ElementName=Listview , Path=SelectedItem.DepartmentId, Mode=TwoWay}" />
-        <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Margin="0,70,-521,0" Width="205" Height="23" VerticalAlignment="Top"   />
-        <ComboBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Margin="0,40,-521,41" Width="205" >
+        <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Margin="0,6,-521,75" Width="205"  Text="{Binding ID ,Mode=TwoWay ,UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Margin="0,70,-521,0" Width="205" Height="23" VerticalAlignment="Top" Text="{Binding Description,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  />
+        <ComboBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Margin="0,40,-521,41" Width="205" Text="{Binding Name , Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem Content="Networks" ></ComboBoxItem>
             <ComboBoxItem Content="Database"></ComboBoxItem>
             <ComboBoxItem Content="Developers"></ComboBoxItem>
         </ComboBox>
-        <Button Grid.Column="1" Grid.Row="1" Margin="10,23,-100,27" Content="Add" Click="Button_Click"/>
-        <Button Grid.Column="1" Grid.Row="1" Margin="151,23,-241,27" Content="Update"/>
-        <Button Grid.Column="1" Grid.Row="1" Margin="292,23,-383,27" Content="Delete"/>
-        <ListView Grid.Row="2" Grid.Column="1" Margin="0,0,-521,0" ItemsSource="{Binding Details}" Name="Listview" >
+        <Button Grid.Column="1" Grid.Row="1" Margin="10,23,-100,27" Content="Add" Command="{Binding AddCommand}"/>
+        <Button Grid.Column="1" Grid.Row="1" Margin="151,23,-241,27" Content="Update" Command="{Binding UpdateCommand}"/>
+        <Button Grid.Column="1" Grid.Row="1" Margin="292,23,-383,27" Content="Delete" Command="{Binding DeleteCommand}"/>
+        <ListView Grid.Row="2" Grid.Column="1" Margin="0,0,-521,0" ItemsSource="{Binding Details}" Name="Listview" SelectedItem="{Binding SelectedItem}" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="First NAme" Width="80" DisplayMemberBinding="{Binding FirstName}" />

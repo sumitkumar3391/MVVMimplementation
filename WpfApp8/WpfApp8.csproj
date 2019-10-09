@@ -58,6 +58,7 @@
     <Compile Include="Model\Department1.cs" />
     <Compile Include="Model\Person1.cs" />
     <Compile Include="Model\PersonDetail.cs" />
+    <Compile Include="ViewModel\CommandHandler.cs" />
     <Compile Include="ViewModel\DepartmentViewModel1.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel1.cs" />
